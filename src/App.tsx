@@ -17,14 +17,12 @@ function App() {
   const { selectedCity, selectedCityWeather, isLoading, setSelectedCity, getWeather } = weatherStore;
 
   useEffect(() => {
-    //getWeather();
-  });
+    getWeather();
+  },[selectedCity, getWeather]);
 
   const handleCityClick = (city: string) => {
     console.log(city);
     setSelectedCity(city);
-    // TODO: remove
-    getWeather();
   };
 
   return (
