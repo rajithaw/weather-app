@@ -8,8 +8,10 @@ interface IListItemActionProps {
 
 const ListItemAction = styled.span<IListItemActionProps>`
   display: none;
-  width: 20px;
-  height: 20px;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
   margin: 1rem;
   background-image: url(${props => props.isExpanded ? collapseImage : expandImage});
@@ -19,8 +21,6 @@ const ListItemAction = styled.span<IListItemActionProps>`
   @media (max-width: 1024px) {
     display: block;
     position: absolute;
-    top: 0px;
-    right: 0px;
   }
 `;
 

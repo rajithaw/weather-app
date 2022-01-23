@@ -5,10 +5,10 @@ interface IWidgetProps {
 	readonly alignItems?: string;
 }
 
-const Widget = styled.div<IWidgetProps>`
+const Widget = styled.fieldset<IWidgetProps>`
   display: flex;
   flex-grow: 1;
-	flex-basis: 50%;
+  flex-basis: 50%;
   flex-direction: ${props => props.flexDirection || "row"};
 	align-items: ${props => props.alignItems || "center"};
 	border: 1px solid rgb(231, 235, 240);

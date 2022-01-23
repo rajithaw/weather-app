@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import LoadingIndicator from "./components/layout/LoadingIndicator";
 
 import MainContainer from './components/layout/MainContainer';
 import MainMenu from './components/layout/Menu';
@@ -11,6 +10,7 @@ import CapitalCitiesList from './components/weather/CapitalCitiesList';
 import { CapitalCities } from './Constants';
 import { useStores } from "./stores/StoreContext";
 import CitiWeather from "./components/weather/CitiWeather";
+import LoadingIndicator from "./components/weather/LoadingIndicator";
 
 function App() {
   const { weatherStore } = useStores();

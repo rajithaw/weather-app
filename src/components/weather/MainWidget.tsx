@@ -1,4 +1,6 @@
 import Widget from "../layout/Widget"
+import WidgetImage from "../layout/WidgetImage";
+import WidgetText from "../layout/WidgetText";
 import WidgetTile from "../layout/WidgetTile";
 
 interface IProps {
@@ -13,11 +15,11 @@ const MainWidget = ({ icon, main, description, temperature }: IProps) => {
   return (
     <Widget>
 			<WidgetTile>
-				<img src={`https://openweathermap.org/img/w/${icon}.png`} alt={main} />
-				<span>{description}</span>
+				<WidgetImage src={`https://openweathermap.org/img/w/${icon}.png`} alt={main}/>
+				<WidgetText capitalize>{description}</WidgetText>
 			</WidgetTile>
 			<WidgetTile>
-				{temperature} C°
+				<WidgetText>{temperature}°C</WidgetText>
 			</WidgetTile>
 		</Widget>
   );

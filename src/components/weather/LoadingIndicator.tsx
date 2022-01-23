@@ -1,15 +1,5 @@
-import styled from "styled-components";
 import { Oval } from "react-loader-spinner";
-
-const LoadingIndicatorContainer = styled.div`
-  position: absolute;
-  width: 100%;
-	height: 100%;
-	background-color: #ffffff;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
+import LoadingIndicatorContainer from "../layout/LoadingIndicatorContainer";
 
 const LoadingIndicator = () => {
 	return (
