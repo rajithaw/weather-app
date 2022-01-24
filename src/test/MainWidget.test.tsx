@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import MainWidget from '../components/weather/MainWidget';
 
-test('renders whether icon', () => {
+test('should render whether icon', () => {
   render(<MainWidget icon="test_icon" main="test main text" description="test description" temperature={35.5} />);
   
   const iconElement = screen.getByAltText(/test main text/) as HTMLImageElement;
@@ -10,7 +10,7 @@ test('renders whether icon', () => {
   expect(iconElement.src).toBe("https://openweathermap.org/img/w/test_icon.png");
 });
 
-test('renders whether data', () => {
+test('should render whether data', () => {
   render(<MainWidget icon="test_icon" main="test main text" description="test description" temperature={35.5} />);
   
   const descriptionElement = screen.getByText(/test description/);

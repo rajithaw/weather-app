@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import CitiWeather from '../components/weather/CitiWeather';
 import { IWeather } from '../stores/WeatherStore';
 
-test('renders all weather data', () => {
+test('should render all weather data', () => {
 
 	const weather: IWeather = {
 		main: "test main text",

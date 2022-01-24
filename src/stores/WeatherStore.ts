@@ -21,7 +21,15 @@ export interface IWeather {
 	clouds: number
 }
 
-export class WeatherStore {
+export interface IWeatherStore {
+	selectedCity: string;
+	selectedCityWeather: IWeather;
+	isLoading: boolean;
+	setSelectedCity(city: string): void;
+	getWeather(): Promise<any>;
+}
+
+export default class WeatherStore implements IWeatherStore {
 	constructor() {
 		makeObservable(this);
 	}
@@ -31,13 +39,13 @@ export class WeatherStore {
 	@observable isLoading: boolean = false;
 
 	@action setSelectedCity = (city: string) => {
-			this.selectedCity = city;
+		this.selectedCity = city;
 	};
 
 	@action getWeather = () => {
 		this.isLoading = true;
 		
-		WeatherService.getWeatherByCity(this.selectedCity)
+		return WeatherService.getWeatherByCity(this.selectedCity)
 			.then(response => {
 				runInAction(() => {
 					this.selectedCityWeather = {

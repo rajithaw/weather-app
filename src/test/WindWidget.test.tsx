@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import WindWidget from '../components/weather/WindWidget';
 
-test('renders wind data', () => {
+test('should render wind data', () => {
   render(<WindWidget windSpeed={5.23} windDegrees={70} windGust={9.2} />);
   
   const speedElement = screen.getByText(/5.23 km\/h/);

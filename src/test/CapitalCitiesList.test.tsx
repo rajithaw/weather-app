@@ -51,6 +51,7 @@ test("should expand/collapse in mobile when clicked", () => {
 	const selectedElement = screen.getByText(/test city 2/);
 	const otherElement = screen.getByText(/test city 3/);
 
+	// initially only the selected city will be visible
 	expect(selectedElement).not.toHaveStyleRule('display', 'none', {
     media: '(max-width: 1024px)'
   });
@@ -58,14 +59,18 @@ test("should expand/collapse in mobile when clicked", () => {
     media: '(max-width: 1024px)'
   });
 
+	// click to expand
 	fireEvent.click(selectedElement);
 
+	// other cities should be visible
 	expect(otherElement).not.toHaveStyleRule('display', 'none', {
     media: '(max-width: 1024px)'
   });
 
+	// click to collapse
 	fireEvent.click(selectedElement);
 
+	// other cities should not be visible
 	expect(otherElement).toHaveStyleRule('display', 'none', {
     media: '(max-width: 1024px)'
   });
