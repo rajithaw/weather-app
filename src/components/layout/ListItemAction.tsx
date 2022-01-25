@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import expandImage from "../../images/expand.svg";
-import collapseImage from "../../images/collapse.svg";
+import styled from 'styled-components';
+import expandImage from '../../images/expand.svg';
+import collapseImage from '../../images/collapse.svg';
 
 interface IListItemActionProps {
-    readonly isExpanded: boolean;
-  }
+  readonly isExpanded: boolean;
+}
 
 const ListItemAction = styled.span<IListItemActionProps>`
   display: none;
@@ -14,7 +14,8 @@ const ListItemAction = styled.span<IListItemActionProps>`
   height: 1.5rem;
   cursor: pointer;
   margin: 1rem;
-  background-image: url(${props => props.isExpanded ? collapseImage : expandImage});
+  background-image: url(${(props) =>
+    props.isExpanded ? collapseImage : expandImage});
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 50%;
